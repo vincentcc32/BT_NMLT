@@ -1,0 +1,322 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+void hello(){
+	cout<<"hello"<<endl;
+}
+void nhap_mang(int arr[],int n){
+	for(int i = 0 ; i < n ; i++){
+		cout<<arr[i]<<" ";
+	}
+}
+int tim_vitri_max(int arr[],int n,int &vitri_max,int max){
+	for(int i = 1 ; i < n ; i++){
+		if(max <= arr[i]) {
+		max = arr[i];
+		vitri_max=i;
+	}
+}
+	return vitri_max;
+}
+int tim_max(int arr[],int n,int &max){
+	for(int i = 1 ; i < n ; i++){
+		if(max <= arr[i]) {
+		max = arr[i];
+	}
+}
+	return max;
+}
+
+int main (){
+/*	bai1 else if
+	float nghe,noi,doc,viet;
+	cout<<"nhap diem thi nghe tieng anh B1: " ;
+	cin>>nghe;
+	cout<<"nhap diem thi noi tieng anh B1: ";
+	cin>>noi;
+	cout<<"nhap diem thi doc tieng anh B1: ";
+	cin>>doc;
+	cout<<"nhap diem thi viet tieng anh B1: ";
+	cin>>viet;
+	float diemtb = float(nghe+noi+doc+viet)/4;
+	if(diemtb >= 9 ) cout<<"Diem TB la: "<<diemtb<<" Xep loai xuat sac ";
+	else if(diemtb >= 8) cout<<"Diem TB la: "<<diemtb<<" Xep loai gioi ";
+	else if(diemtb >=7) cout<<"Diem TB la: "<<diemtb<<" Xep loai kha ";
+	else if(diemtb >=5) cout<<"Diem TB la: "<<diemtb<<" Xep loai trung binh ";
+	else cout<<"Diem TB la: "<<diemtb<<" Khong dat ";
+	bai2 else if
+	int so1,so2,so3;
+	cout<<"nhap so thu 1: ";
+	cin>>so1;
+	cout<<"nhap so thu 2: ";
+	cin>>so2;
+	cout<<"nhap so thu 3: ";
+	cin>>so3;
+	int max = so1;
+	if (max < so2) max = so2;
+	if(max < so3) max = so3;
+	cout<<"so lon nhat trong ba so la: "<<max;
+	int tuoi;
+	cout<<"nhap tuoi cua ban: ";
+	cin>>tuoi;
+	if(tuoi >= 16) cout<<"ban da du dieu kien vao lop 10";
+	else cout<<"ban chua du dieu kien vao lop 10";
+	int so;
+	cout<<"nhap vao so nguyen de kiem tra: ";
+	cin>>so;
+	if(so < 100 ) cout<<"so nho hon 100!";
+	else if(so == 100) cout<<"so bang 100!";
+	else cout<<"so lon hon 100!";
+	float kt1,kt2,ck;
+	cout<<"nhap diem kiem tra lan 1: ";
+	cin>>kt1;
+	cout<<"nhap diem kiem tra lan 2: ";
+	cin>>kt2;
+	cout<<"nhap diem kiem tra cuoi ki: ";
+	cin>>ck;
+	float diemtb = float(0.4*(kt1+kt2)/2)+0.6*ck;
+	cout<<"diem trung binh cua ban la: "<<diemtb;
+	unsigned long long ds;
+	do{
+	cout<<"nhap vao doanh so cua ban: ";
+	cin>>ds;
+	}while(ds<=0);
+	if(ds <= 100000000) cout<<"5%";
+	else if(ds <=300000000) cout<<"10%";
+	else cout<<"20%";
+
+	int time;
+	cout<<"nhap so phut: ";
+	cin>>time;
+	int tien;
+	if(time <= 50) tien = 25000+600*time;
+	else if(time <= 200) tien = 25000+600*50+400*(time-50);
+	else tien = 25000+600*50+400*150+200*(time-150);
+	cout<<"tong tien dien thoai cua ban la: "<<tien;
+	cout<<"gia phuong trinh bac hai ax2+bx+c=0";
+	int a,b,c;
+	do{
+	cout<<"\nnhap gia tri cua a khac 0: ";
+	cin>>a;
+	} while (a == 0);
+	cout<<"nhap gia tri cua b: ";
+	cin>>b;
+	cout<<"nhap gia tri cua c: ";
+	cin>>c;
+	int denta = b*b-4*a*c;
+	if(denta > 0 ) {
+		cout<<"phuong trinh co 2 nghiem phan biet! ";
+		cout<<"x1 = "<< float(-b+sqrt(denta))/(2*a);
+		cout<<" x2 = "<< float(-b-sqrt(denta))/(2*a);
+	}
+	else if(denta == 0){
+		cout<<"phuong trinh co 2 nghiem kep! ";
+		cout<<"x1=x2= "<<float(-b/(2*a));
+	}	
+	else cout<<"vo nghiem! ";
+	*/
+	/*
+	int x;
+	cout<<"nhap x: ";
+	cin>>x;
+	double kqua;
+	if(x < 3) kqua = double (5*pow(x,2) - 3*x);
+	else if(x > 9) kqua = double (cbrt(5*pow(x,2)+3*x));
+	else kqua = 5*pow(x,2);
+	cout<<kqua;
+	*/
+/*
+	for(int i = 0 ; i < 5 ; i++){
+		hello();
+	}
+	*/
+/*	bai tap chia keo
+	int n;
+	do{
+	cout<<"nhap so hs: ";
+	cin>>n;
+	}while(n<=0);
+	int tong1=1,tong2=0;
+	for(int i = 1 ; i < n ; i++){
+		tong2+=3;
+	}
+	if(n == 1) cout<<"tong keo "<<tong1;
+	else cout<<"tong keo "<<tong1+tong2;
+	*/
+	
+/*	bai tap chia tien ban co 64 0 
+	unsigned long long tien = 1;
+	for(int i = 1 ; i < 4 ; i++){
+		tien=tien*2;
+	}
+	cout<<tien;
+	*/
+	/*
+	for(int i = 5 ; i >= 1 ; i--){
+		if(i == 2) continue;
+		for(int j = 1 ; j <= i ; j++){
+			cout<<"*";
+		}
+		cout<<endl;
+	}
+	*/
+	/*
+	int n;
+	do{
+		cout<<"nhap n: ";
+		cin>>n;
+	} while(n<=0);
+	cout<<"1.nhap mang cua ban:\n";
+	int arr[n];
+	for(int i = 0 ; i < n ; i++){
+		cout<<"arr["<<i<<"] ";
+		cin>>arr[i];
+	}
+	cout<<"2.mang cua ban la: ";
+	nhap_mang(arr,n);
+	cout<<"\n3.cac phan tu chan cua mang la: ";
+	for(int i = 0 ; i < n ; i++){
+		if(arr[i] % 2 == 0) cout<<arr[i]<<" ";
+	}
+	cout<<"\n4.cac phan tu chia het cho 5: ";
+	for(int i = 0 ; i < n ; i++){
+		if(arr[i] % 5 == 0) cout<<arr[i]<<" ";
+	}
+	cout<<"\n5.tong cac phan tu trong mang: ";
+	int sum=0;
+	for(int i = 0 ; i < n ; i++){
+		sum+=arr[i];
+	}
+	cout<<sum;
+	cout<<"\n6.2 phan tu dau tien trong mang lan luot la: "<<arr[0]<<" "<<arr[1];
+	cout<<"\n7.2 phan tu le dau tien cua mang la: ";
+	int dem1=0;
+	int vitri1;
+	for(int i = 0 ; i < n ; i++){
+		if(arr[i] % 2 != 0) {
+			dem1++;
+			vitri1 = i;
+		}
+		if(dem1 == 1) break;
+	}
+	int dem2=0;
+	int vitri2;
+	for(int i = 0 ; i < n ; i++){
+		if(arr[i] % 2 != 0 && vitri1 !=i){
+			dem2++;
+			vitri2=i;
+		}
+		if(dem2==1) break;
+	}
+	if(dem1+dem2 == 2 ) cout<<arr[vitri1]<<" "<<arr[vitri2];
+	else if(dem1+dem2 == 1 ) cout<<"mang cua ban chi co 1 so le!";
+	else cout<<"mang khong co chua phan tu la so le!";
+	int x;
+	lai:
+		cout<<"\nnhap x: ";
+		cin>>x;
+		if(x>=n) goto lai;
+	cout<<"8.phan tu o vi tri "<<x<<" la: ";
+	for(int i = 0; i < n ; i++){
+		if(x==i) cout<<arr[i];
+	}
+	*/
+	/*
+	int n; 
+	do{
+		cout<<"nhap n: ";
+		cin>>n;
+	}while(n<=0);
+	int arr[n];
+	cout<<"1.nhap cac phan tu cho mang cua ban:\n";
+	for(int i = 0 ; i < n ; i++){
+		cout<<"arr["<<i<<"] ";
+		cin>>arr[i];
+	}
+	cout<<"2.mang cua ban sau khi nhap la: ";
+	nhap_mang(arr,n);
+	cout<<"\n3.2 phan tu chia het cho 5 o cuoi cung la: ";
+	int dem1 = 0,sum = 0;
+	int vitri1;
+	for(int i = n-1 ; i >= 0 ; i--){
+		if(arr[i] % 5 == 0 ){
+			dem1++;
+			vitri1 = i;
+			sum+=arr[i];
+		}
+		if(dem1 == 1 ) break;
+	}
+	int dem2 = 0;
+	int vitri2; 
+	for(int i = n-1 ; i >= 0 ; i--){
+		if(arr[i] % 5 == 0 && vitri1 != i){
+			dem2++;
+			vitri2 = i;
+			sum+=arr[i];
+		}
+		if(dem2 == 1 ) break;
+	}
+	if(dem1+dem2 == 2) cout<<arr[vitri1]<<" + "<<arr[vitri2]<<" = "<<sum;
+	else if(dem1+dem2 == 1) cout<<"mang chi co 1 phan tu chia het cho 5!";
+	else cout<<"mang khong co phan tu nao chia het cho 5!";
+	cout<<"\n4.phan tu lon nhat cua mang la: ";
+	int max = arr[0];
+	cout<<tim_max(arr,n,max);
+	cout<<"\n5.vi tri cua max trong mang la: ";
+	int vitri_max = 0;
+	cout<<tim_vitri_max(arr,n,vitri_max,max);
+	cout<<"\n6.cac phan tu doi xung trong mang la: ";
+	int temp=0;
+	for(int i = 0 ; i < n ; i++){
+		int so = 0;
+		int j = arr[i];
+		while(j != 0){
+			int du=j%10;
+			so=so*10+du;
+			j/=10;
+		}
+		if(so == arr[i] && so > 9 ){
+			temp++;
+			cout<<arr[i];
+		}
+	}
+	if(temp == 0 ) cout<<"trong mang khong co so doi xung!";
+	cout<<"\n7.phan tu chia het cho 5 tru phan tu dau tien la: ";
+	temp = 0;
+	for(int i = 0 ; i < n ; i++){
+		if(arr[i] % 5 == 0){
+			temp++;
+			if(temp == 1) {
+				continue;
+			}
+			cout<<arr[i];
+		}
+	}
+	if(temp == 0 ) cout<<"mang khong co phan tu chia het cho 5!";
+	if(temp == 1) cout<<"mang chi co 1 phan tu chi het cho 5!";
+	int m;
+	cout<<"\nnhap m: ";
+	cin>>m;
+	int temp1=0;
+	cout<<"phan tu chia het cho 5 nhung khong xuat m la: ";
+	for(int i = 0 ; i < n ; i++){
+		if(arr[i] % 5 == 0 ){
+			temp1++;
+			if(arr[i] == m) {
+				continue;
+			}
+			else cout<<arr[i]<<" ";
+		}
+	}
+	if(temp1 == 1) cout<<"trong mang khong co so chia het cho 5 hoac chi co 1 so la m!";
+	*/
+	
+	return 0;
+} 
+
+
+
+
+
+
