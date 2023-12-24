@@ -1,0 +1,121 @@
+#include <iostream>
+using namespace std;
+
+void xuat_mang(int arr[],int n){
+	for(int i = 0 ; i < n ; i++){
+		cout<<arr[i]<<" ";
+	}
+}
+int tim_max_va_vitri(int arr[],int n,int &max,int &vitri ){
+	for(int i = 0 ; i < n ; i++){
+		if(max <= arr[i]){
+		 max = arr[i];
+		 vitri = i;
+	}
+	}
+	return max;
+}
+
+int main (){
+	int n;
+	do{
+		cout<<"nhap n: ";
+		cin>>n;
+	} while (n <= 0 );
+	int arr[n];
+	cout<<"1.nhap mang cua ban:\n";
+	for(int i = 0 ; i < n ; i++){
+		cout<<"arr["<<i<<"] = ";
+		cin>>arr[i];
+	}
+	cout<<"2.mang cua ban la: ";
+	xuat_mang(arr,n);
+	cout<<"\n3.tong 2 phan tu chia het cho 5 cuoi cung cua mang: ";
+	int dem = 0;
+	int sum = 0;
+	for(int i = n-1 ; i >= 0 ; i--){
+		if(arr[i] % 5 == 0 ){
+		dem++;
+		sum+=arr[i];
+		}
+		if(dem == 2 ) break;
+	}
+	if(dem == 0 ) cout<<"trong mang khong co so chia het cho 5!";
+	else if(dem == 1) cout<<"trong mang chi co 1 so chia het cho 5!";
+	else cout<<sum;
+	cout<<"\n4.gia tri lon nhat trong mang la: ";
+	int max = arr[0];
+	int vitri = 0;
+	tim_max_va_vitri(arr,n,max,vitri);
+	cout<<max;
+	cout<<"\n5.vi tri cua gia tri lon nhat trong mang la: ";
+	cout<<vitri;
+	cout<<"\n6.cac phan tu doi xung trong mang: ";
+	dem = 0;
+	for(int i = 0 ; i < n ; i++){
+		int j = arr[i];
+		int temp = 0;
+		// 111
+		while (j != 0){
+			int du = j % 10;
+			temp = temp * 10 + du;
+			j = j/10;
+		}
+		if(temp == arr[i] && temp > 9 ) {
+			cout<<arr[i];
+			dem++;
+		}
+	}
+	if(dem == 0 ) cout<<"trong mang khong co so nghich dao!";
+	cout<<"\n7.phan tu chia het cho 5 tru phan tu dau tien la: ";
+	dem = 0;
+	for(int i = 0 ; i < n ; i++){
+		if(arr[i] % 5 == 0 ){
+			dem++;
+			if(dem == 1) {
+				continue;
+			}
+			else cout<<arr[i]<<" ";
+		}
+	}
+	if(dem == 0) cout<<"trong mang khong co so chia het cho 5!";
+	else if (dem == 1 ) cout<<"trong mang chi co 1 phan tu chia het cho 5!";
+	int m;
+	cout<<endl;
+	do{
+		cout<<"nhap m: ";
+		cin>>m;
+	} while (m < 0 || m >= n);
+	cout<<"8.cac phan tu chia het cho tu m nhung khong xuat phan tu dau tien: ";
+	dem = 0;
+	for(int i = m ; i < n ; i++){
+		if(arr[i] % 5 == 0){
+			dem++;
+			if(dem == 1) continue;
+			else cout<<arr[i];
+		}
+	}
+	if(dem == 0) cout<<"trong mang tu vi tri m cho den cuoi mang khong co so nao chia het cho 5!";
+	if(dem == 1 ) cout<<"trong mang chi co 1 so chia het chi 5!";
+	int a;
+	cout<<"\nnhap so chia het cho 5 trong mang ma ban khong muon in: ";
+	cin>>a;
+	cout<<"9.phan tu chia het cho 5 nhung khong xuat m: ";
+	dem = 0;
+	for(int i = 0 ; i < n ; i++){
+		if(arr[i] % 5 == 0){
+			dem++;
+			if(arr[i] == a) continue;
+			else if (dem > 1) cout<<arr[i];
+		}
+	}
+	if(dem == 1 ) cout<<"trong mang chi co 1 so chia het cho 5!";
+	return 0;
+} 
+
+
+
+
+
+
+
