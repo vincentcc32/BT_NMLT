@@ -146,12 +146,32 @@ int main (){
 	*/
 	
 /*	bai tap chia tien ban co 64 0 
+	cách 1 theo công thức 2^64 -1
+	vì là số lơn nên chỉ có unsigned LL mới chứa nổi
 	unsigned long long tien = 1;
 	for(int i = 1 ; i <= 4 ; i++){
 		tien=tien*2;
 	}
 	cout<<tien-1;
 	*/
+/* bai tap chia tien cho ban co 64 o nhung ma lam theo cach 2
+#include <iostream>
+using namespace std;
+int main (){
+	unsigned long long tien = 0,tong = 0;
+	for(int i = 1 ; i <= 5 ; i++){
+		if(i == 1){
+			tien=1;
+			tong=1;
+			continue;
+		}
+		tien*=2;
+		tong+=tien;
+	}
+	cout<<tong;
+	return 0;
+}
+*/
 	/*
 	for(int i = 5 ; i >= 1 ; i--){
 		if(i == 2) continue;
