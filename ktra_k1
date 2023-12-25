@@ -147,10 +147,10 @@ int main (){
 	
 /*	bai tap chia tien ban co 64 0 
 	unsigned long long tien = 1;
-	for(int i = 1 ; i < 4 ; i++){
+	for(int i = 1 ; i <= 4 ; i++){
 		tien=tien*2;
 	}
-	cout<<tien;
+	cout<<tien-1;
 	*/
 	/*
 	for(int i = 5 ; i >= 1 ; i--){
