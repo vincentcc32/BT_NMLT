@@ -1,0 +1,95 @@
+#include <iostream>
+using namespace std;
+
+// ham nhap mang
+void nhap_mang(int arr[],int n){
+	for(int i = 0 ; i < n ; i++){
+		cout<<"arr["<<i<<"] = ";
+		cin>>arr[i];
+	}
+}
+// ham xuat mang
+void xuat_mang(int arr[],int n){
+	for(int i = 0 ; i < n ; i++){
+		cout<<arr[i]<<" ";
+	}
+}
+int main(){
+	int n;
+	// so luong ptu n duoc khong che sao cho lon hon khong
+	do{
+		cout<<"nhap n: ";
+		cin>>n;
+	}while(n <= 0);
+	int arr[n];
+	cout<<"1.nhap mang:\n";
+	// goi ham nhap mang da viet rieng de su dung
+	nhap_mang(arr,n);
+	cout<<"2.mang cua ban la: ";
+	// goi ham nhap mang
+	xuat_mang(arr,n);
+	cout<<"\n3.phan cua chan trong mang: ";
+	// khai bao bien dem
+	int dem  = 0;
+	for(int i = 0 ; i < n ; i++){
+		if(arr[i] % 2 == 0){
+			dem++;
+			cout<<arr[i]<<" ";
+		}
+	}
+	if(dem == 0 ) cout<<"mang khong co so chan!";
+	cout<<"\n4.cac phan tu chia het cho 5 trong mang: ";
+	// reset bien dem
+	dem = 0;
+	for(int i = 0 ; i < n ; i++){
+		if(arr[i] % 5 == 0){
+			dem++;
+			cout<<arr[i];
+		}
+	}
+	if(dem == 0) cout<<"trong mang khong co phan tu chia het cho 5!";
+	cout<<"\n5.tong cac phan tu trong mang: ";
+	// bien tinh tong cac ptu trong mang 1 chieu
+	int sum = 0;
+	for(int i = 0 ; i < n ; i++){
+		sum+=arr[i];
+	}
+	cout<<sum;
+	cout<<"\n6.2 phan tu dau tien cua mang: ";
+	// reset bien dem
+	dem = 0;
+	for(int i = 0 ; i < n ; i++){
+		dem++;
+		cout<<arr[i]<<" ";
+		if(dem == 2 ) break;
+	}
+	if(dem == 1 ) cout<<"trong mang chi chua 1 phan tu!";
+	cout<<"\n7.2 phan tu le dau tien cua mang: ";
+	// reset bien dem
+	dem = 0;
+	for(int i = 0 ; i < n ; i++){
+		if(arr[i] % 2 != 0){
+			dem++;
+			cout<<arr[i]<<" ";
+			if(dem == 2){
+				break;
+			}
+		}
+	}
+	if(dem == 0 ) cout<<"trong mang khong chua phan tu le!";
+	else if (dem == 1 ) cout<<"trong mang chi chua 1 phan tu le!";
+	// x la vi tri, nhap x de xuat phan tu o vi tri x
+	int x;
+	// vi vi tri bat dau tu 0 va nho hon n - 1 nen khong che x luon luon trong khoang 0 den n - 1
+	cout<<endl;
+	do{
+		cout<<"nhap x: ";
+		cin>>x;
+	}while(x < 0 || x >= n);
+	cout<<"8.phan tu vi tri x la: ";
+	for(int i = 0 ; i < n ; i++){
+		if(x == i) cout<<arr[i];
+	}
+	
+	return 0;
+}
