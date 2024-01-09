@@ -1,0 +1,85 @@
+#include <iostream>
+using namespace std;
+
+typedef long long ll;
+typedef unsigned long long ull;
+#define PI 3.14159
+
+// ham nhap mang
+void nhap_mang(int arr[],int n){
+	for(int i = 0 ; i < n ; i++){
+		cout<<"arr["<<i<<"] = ";
+		cin>>arr[i];
+	}
+}
+
+// ham xuat mang
+void xuat_mang(int arr[],int n){
+	for(int i = 0 ; i < n ; i++){
+		cout<<arr[i]<<" ";
+	}
+}
+// ham copy lai mang ban dau de khi can ta co the khoi phuc lai
+void copy(int arr_copy[],int arr[],int m){
+	for(int i = 0 ; i < m ; i++){
+		arr_copy[i] = arr[i];
+	}
+}
+int main (){
+	int n;
+	do{
+		cout<<"nhap n: ";
+		cin>>n;
+	}while (n <= 2);
+	cout<<"nhap mang:\n";
+	// m chinh la copy cua n khi ta muon dung lai n
+	int m = n;
+	// mang 1 chieu chinh va mang 1 chieu copy
+	int arr[n],arr_copy[m];
+	// goi ham nhap mang
+	nhap_mang(arr,n);
+	// goi ham copy de ta copy lai mang du bi
+	copy(arr_copy,arr,n);
+	cout<<"mang cua ban la: ";
+	// goi ham xuat mang
+	xuat_mang(arr,n);
+	cout<<endl;
+	// sap xep mang tang dan
+	for(int i = 0 ; i < n ; i++){
+		for(int j = i+1 ; j < n ; j++){
+			if(arr[i] > arr[j]) swap(arr[i],arr[j]);
+		}
+	}
+	cout<<"sap xep mang tang dan: ";
+	xuat_mang(arr,n);
+	// tinh mixi trong mang da sap xep mang chua them phan tu
+	int dem;
+	int temp = INT_MAX;
+	// tim khoang cach ngan nhat cua mot so den 1 so
+		for(int j = 0 ; j < n-1 ; j++){
+			dem = 0;
+			dem = arr[j+1] - arr[j];
+			if(dem < temp) temp = dem;
+		}
+	// dua vao mang da sap xep ta them vao mang phan tu con thieu vd ptu mang co so tu 1 3 5 thi ta se them 2 va 4 vao
+		for(int j = 0 ; j < n-1 ; j++){
+			// thuat tuan them so vao mang co dieu kien
+			if(arr[j] != arr[j+1]-1){
+				n++;
+				for(int k = n-1 ; k >= j+1 ; k--){
+					arr[k] = arr[k-1];
+					if(k == j+1) arr[j+1] = arr[j]+1;
+				}
+			}
+		}
+	cout<<"\nthem phan tu thieu vao mang: ";
+	xuat_mang(arr,n);
+	cout<<endl;
+	cout<<"khoang cach xa nhat cua mot so den 1 so: "<<n-1;
+	cout<<"\nkhoang cach ngan nhat cua mot so dem mot so: "<<temp;
+	// de bai tham khao tai https://codeforces.com/problemset/problem/567/A   moi giai dc 1/2 bai toan
+	return 0;
+}
+
+
+
